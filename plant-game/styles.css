@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 2.5em;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.simulation-container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+}
+
+#gameCanvas {
+    border: 2px solid #333;
+    background-color: #000;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.controls {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.plant-type {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.material-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 150px;
+}
+
+.material-btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 14px;
+    min-width: 120px;
+    position: relative;
+    overflow: hidden;
+}
+
+.material-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.3;
+    z-index: 1;
+    background-color: var(--material-color);
+}
+
+.material-btn:hover::before {
+    opacity: 0.5;
+}
+
+.material-btn.active::before {
+    opacity: 0.7;
+}
+
+.material-btn span {
+    position: relative;
+    z-index: 2;
+}
+
+#clearButton {
+    padding: 10px 20px;
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 14px;
+}
+
+#clearButton:hover {
+    background-color: #ff6666;
+    transform: translateY(-2px);
+}
+
+.archetype-display {
+    margin-top: 10px;
+    padding: 8px;
+    background-color: #333;
+    border-radius: 4px;
+    font-size: 14px;
+} 
